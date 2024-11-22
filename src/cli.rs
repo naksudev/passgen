@@ -7,7 +7,7 @@ use clap::Parser;
     about = "Generate passwords with ease",
     long_about = "Passgen is a command-line tool for generating customizable password.\n\n\
         You can include letters, numbers, special characters and exclude ambiguous characters.",
-    after_help = "Example:\n passgen -LNS --length 24 --exclude \"aAbBcC01\""
+    after_help = "Example:\n passgen -LNS --length 24 --exclude \"aAbBcC01\" --count 10"
 )]
 
 pub struct Args {
