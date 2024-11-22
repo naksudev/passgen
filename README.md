@@ -26,6 +26,11 @@ passgen --help
 ```bash
 passgen -LNS --length 10 --exclude "aA"
 ```
+
+### Generate multiple passwords
+```bash
+passgen -LNS --length 16 -c 10
+```
 This command generates a password **L**etters, **N**umbers and **S**pecial characters.  
 It also excludes the letter A (upper and lower case) from the generation of the password.
 
@@ -52,8 +57,8 @@ passgen --length 12 -LN
 passgen --exclude "oOiI0lL"
 ```
 
-### A very long and complex password.
+### Multiple very long and complex passwords.
 ```bash
-passgen --length 64 -LNS
+passgen --length 64 -LNS -c 10
 ```
 
