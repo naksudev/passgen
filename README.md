@@ -44,7 +44,7 @@ It also excludes the letter A (upper and lower case) from the generation of the 
 | --exclude <EXCLUDE> | Exclude specific characters (by default: `none`).    |
 | --help              | Show help                                            |
 | --version           | Show version of the tool                             |
-
+| --color             | Colorize the output                                  |
 
 ## Examples
 ### Password with 12 characters with letters and numbers only
