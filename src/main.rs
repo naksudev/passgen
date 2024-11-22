@@ -7,7 +7,7 @@ mod password;
 use password::PasswordConfig;
 
 fn main() {
-    let args = Args::parse(); 
+    let args = Args::parse();
 
     let config = PasswordConfig {
         length: args.length,
@@ -17,6 +17,14 @@ fn main() {
         exclude: args.exclude,
     };
 
-    let password = password::generate_password(&config);
-    println!("Generated password: \n{}", password);
+    let mut passwords = Vec::new();
+    
+    for _n in 1..args.count {
+       passwords.push(password::generate_password(&config));
+    }
+
+    println!("Generated password(s):");
+    for p in passwords {
+        println!("{}", p);
+    }
 }

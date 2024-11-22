@@ -6,7 +6,7 @@ use clap::Parser;
     name = "passgen",
     about = "Generate passwords with ease",
     long_about = "Passgen is a command-line tool for generating customizable password.\n\n\
-        You can include letters, numbers, special characters and excluse ambiguous characters.",
+        You can include letters, numbers, special characters and exclude ambiguous characters.",
     after_help = "Example:\n passgen -LNS --length 24 --exclude \"aAbBcC01\""
 )]
 
@@ -30,6 +30,10 @@ pub struct Args {
     /// Exclude specific characters (e.g., 'aAbBcC01')
     #[arg(short, long, default_value_t = String::new())]
     pub exclude: String,
+
+    /// Define the number of passwords to generate
+    #[arg(short, long, default_value_t = 1)]
+    pub count: usize,
 }
 
 
