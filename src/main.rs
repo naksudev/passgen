@@ -20,7 +20,7 @@ fn main() {
 
     let mut passwords = Vec::new();
     
-    for _n in 1..args.count {
+    for _n in 0..args.count {
        passwords.push(password::generate_password(&config));
     }
 
