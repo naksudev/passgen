@@ -1,11 +1,12 @@
 [package]
 name = "passgen"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 repository = "https://github.com/naksudev/passgen"
 
 [dependencies]
 clap = { version = "4.5.21", features = ["derive"] }
+colored = "2.1.0"
 rand = "0.8.5"
 
 # The profile that 'dist' will build with

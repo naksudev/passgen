@@ -34,6 +34,10 @@ pub struct Args {
     /// Define the number of passwords to generate
     #[arg(short, long, default_value_t = 1)]
     pub count: usize,
+
+    /// Colorize the password output
+    #[arg(long)]
+    pub color: bool
 }
 
 

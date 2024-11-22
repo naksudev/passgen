@@ -1,10 +1,11 @@
 use clap::Parser;
+use colored::Colorize;
 
 mod cli;
 use cli::Args;
 
 mod password;
-use password::PasswordConfig;
+use password::{PasswordConfig, colorize_password};
 
 fn main() {
     let args = Args::parse();
@@ -23,8 +24,13 @@ fn main() {
        passwords.push(password::generate_password(&config));
     }
 
-    println!("Generated password(s):");
+    println!("{}", "Generated password(s):".green());
     for p in passwords {
-        println!("{}", p);
+        let password = if args.color { 
+            colorize_password(&p)
+        } else {
+            p
+        };
+        println!("{}", password);
     }
 }

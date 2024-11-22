@@ -1,6 +1,7 @@
 use rand::RngCore;
 use rand::rngs::OsRng;
 use std::collections::HashSet;
+use colored::Colorize;
 
 pub struct PasswordConfig {
     pub length: usize,
@@ -42,7 +43,6 @@ impl PasswordConfig {
     }
 }
 
-
 pub fn generate_password(config: &PasswordConfig) -> String {
     config.validate();
     let charset: Vec<char> = config.build_charset().into_iter().collect();
@@ -56,4 +56,22 @@ pub fn generate_password(config: &PasswordConfig) -> String {
     }
 
     password
+}
+
+pub fn colorize_password(password: &str) -> String {
+    password
+        .chars()
+        .map(|c| {
+            if c.is_digit(10) {
+                c.to_string().bright_yellow().to_string()
+            }
+            else if c.is_alphanumeric() {
+                c.to_string().blue().to_string()
+            }
+            else {
+                c.to_string().bright_purple().to_string()
+            }
+
+        })
+        .collect()
 }
