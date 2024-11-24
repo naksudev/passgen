@@ -2,7 +2,7 @@ use clap::Parser;
 
 #[derive(Parser)]
 #[command(
-    version, 
+    version,
     name = "passgen",
     about = "Generate passwords with ease",
     long_about = "Passgen is a command-line tool for generating customizable password.\n\n\
@@ -37,7 +37,5 @@ pub struct Args {
 
     /// Colorize the password output
     #[arg(long)]
-    pub color: bool
+    pub color: bool,
 }
-
-
